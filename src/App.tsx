@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { fetchData } from "./Service/Service";
 import { Data } from "./Model/model";
-import Logo from "./Resources/logo";
+import Logo from "./assets/logo";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function App() {
   const [data, setData] = useState<Data>();
@@ -50,13 +52,33 @@ function App() {
 
   return (
     <>
-      <Logo />
-      <h4>Weather App</h4>
-      <div>{data?.name}</div>
-      <p>Visibility:{data?.visibility}</p>
-      <p>La temperatura actual es: {temp}°C</p>
-      <p>Humedad: {data?.main.humidity}%</p>
-      <p>Presión: {data?.main.pressure}hPa</p>
+      <Row>
+        <Col className="logo-container">
+          <Logo />
+        </Col>
+      </Row>
+      <Row>
+        <Col className="main">
+          <Row className="main-content">
+            <Col lg={6}>
+              <div>{data?.name}</div>
+              <div className="data">{temp}°C</div>
+            </Col>
+            <Col lg={6}>
+              <span className="label">Visibilidad</span>
+              <div className="data">{data?.visibility}</div>
+            </Col>
+            <Col lg={6}>
+              <span className="label">Humedad:</span>
+              <div className="data">{data?.main.humidity}%</div>
+            </Col>
+            <Col lg={6}>
+              <span className="label">Presión: </span>
+              <div className="data">{data?.main.pressure}hPa</div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     </>
   );
 }
