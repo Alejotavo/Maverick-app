@@ -3,7 +3,8 @@ export interface Data {
     name: string,
     visibility: number,
     coord: Coord,
-    main: Main
+    main: Main,
+    weather: Weather
   }
 
   export interface Coord {
@@ -17,4 +18,9 @@ export interface Data {
     pressure: number
   }
   
+  
+
+  export interface Weather {
+    icon: string,
+  }
   

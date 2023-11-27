@@ -63,6 +63,12 @@ function App() {
             <Col lg={6}>
               <div>{data?.name}</div>
               <div className="data">{temp}°C</div>
+              {data?.weather && (
+                <img
+                  src={`https://openweathermap.org/img/wn/${data?.weather[0]?.icon}.png`}
+                  alt="Weather Icon"
+                />
+              )}
             </Col>
             <Col lg={6}>
               <span className="label">Visibilidad</span>
