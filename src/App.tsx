@@ -65,7 +65,7 @@ function App() {
               <div className="data">{temp}°C</div>
               {data?.weather && (
                 <img
-                  src={`https://openweathermap.org/img/wn/${data?.weather[0]?.icon}.png`}
+                  src={`https://openweathermap.org/img/wn/${data?.weather[0].icon}.png`}
                   alt="Weather Icon"
                 />
               )}

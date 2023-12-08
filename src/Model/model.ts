@@ -4,7 +4,7 @@ export interface Data {
     visibility: number,
     coord: Coord,
     main: Main,
-    weather: Weather
+    weather: Weather[]
   }
 
   export interface Coord {
